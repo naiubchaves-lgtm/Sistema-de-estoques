@@ -1,4 +1,6 @@
 # Sistema-de-estoques
+eu consegui fazer rodar pelo codespaces, tá funcionando bem legal
+
 #Quando alguém abrir o projeto precisa instalar as bibliotecas, 
 #digitar:   pip install -r requirements.txt
 #----------------------------------------------------
