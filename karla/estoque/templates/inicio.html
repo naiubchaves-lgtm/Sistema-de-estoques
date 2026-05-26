@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totem de Conveniência</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#f2f2f2;
+        }
+
+        header{
+            background-color:#1e293b;
+            color:white;
+            padding:25px;
+            text-align:center;
+            font-size:30px;
+            font-weight:bold;
+            box-shadow:0px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+            margin-top:40px;
+        }
+
+        .descricao{
+            text-align:center;
+            font-size:18px;
+            color:#444;
+            margin-bottom:40px;
+        }
+
+        .produtos{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            border-radius:15px;
+            padding:20px;
+            box-shadow:0px 4px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:scale(1.03);
+        }
+
+        .produto-nome{
+            font-size:22px;
+            font-weight:bold;
+            margin-bottom:10px;
+        }
+
+        .preco{
+            color:green;
+            font-size:20px;
+            margin-bottom:15px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            background-color:#2563eb;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background-color:#1d4ed8;
+        }
+
+        footer{
+            background-color:#1e293b;
+            color:white;
+            text-align:center;
+            padding:20px;
+
+            position:fixed;
+            bottom:0;
+            left:0;
+
+            width:100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        Estoque - Sistema de Armazenagem
+    </header>
+
+    <div class="container">
+
+        <div class="descricao">
+            Sistema inteligente de gerenciamento para gestores de produtos para condomínios.
+        </div>
+
+        <div class="produtos">
+
+            {% for produto in produtos %}
+
+            <div class="card">
+
+                <div class="produto-nome">
+                     {{ produto.nome }}
+                </div>
+
+                <div class="preco">
+                    R$ {{ produto.preco }}
+                </div>
+
+                <p>
+                    Estoque: {{ produto.quantidade }}
+                </p>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <input type="hidden"
+                        name="produto_id"
+                        value="{{ produto.id }}">
+
+                    <button type="submit">
+                         Comprar
+                    </button>
+
+                </form>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <footer>
+        Anne, Gabriel, Paola - Sistema de Totem de Conveniência
+    </footer>
+
+</body>
+</html>
