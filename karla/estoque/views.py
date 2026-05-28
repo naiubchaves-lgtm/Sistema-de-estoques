@@ -23,3 +23,11 @@ def inicio(request):
     produtos = Produto.objects.all()
 
     return render(request, 'inicio.html', {'produtos': produtos})
+    
+    From django,shortcuts import render, redirect, get object_er_404
+Fron models import Produto
+pef vender_produto (request, produto_id) :
+Produto - get_object_or_404(Produto, 1d-produto_id)
+produto quantidade t= 1
+produto. save ()
+return redirect ("inicio:)
