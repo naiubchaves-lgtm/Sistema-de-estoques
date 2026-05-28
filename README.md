@@ -1,17 +1,14 @@
 # Sistema-de-estoques
-<<<<<<< HEAD
 eu consegui fazer rodar pelo codespaces, tá funcionando bem legal
 
 #Quando alguém abrir o projeto precisa instalar as bibliotecas, 
 #digitar:   pip install -r requirements.txt
-=======
 #Quando alguém abrir o projeto precisa instalar as bibliotecas, 
 #digitar: 
     cd karla
     pip install -r requirements.txt
 #----------------------------------------------------
        a saida do terminal precisa estar escrito assim:(nao digite isso) "/workspaces/Sistema-de-estoques/karla"
->>>>>>> 59c677b (Adiciona estrutura inicial do Django)
 #----------------------------------------------------
 Para fazer rodar o servidor, 
 digitar no terminall:  python manage.py runserver 0.0.0.0:8000
