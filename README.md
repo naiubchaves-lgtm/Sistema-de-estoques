@@ -13,18 +13,17 @@ eu consegui fazer rodar pelo codespaces, tá funcionando bem legal
 Para fazer rodar o servidor, 
 digitar no terminall:  python manage.py runserver 0.0.0.0:8000
 #---------------------------------------------------
-<<<<<<< HEAD
-=======
 
 
             Agora já é para estar aberto o servidor
 
 
 #-----------------------------------------------
->>>>>>> 59c677b (Adiciona estrutura inicial do Django)
 para visualizar como adm a parte do estoque, 
 digitar no navegador a url:   'site gerado pelo codespaces+"/admin"
+
 Para criar login e senha de adm, digitar no terminal:     python manage.py createsuperuser
 na parte do email, dê um enter para ignorar!
+
 meu login: gabriel / senha: Faculdade
 #-----------------------------------------------
