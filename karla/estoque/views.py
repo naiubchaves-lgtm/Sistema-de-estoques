@@ -1,8 +1,3 @@
-#from django.shortcuts import render
-
-# Create your views here.
-#coloquei '#' acima mesmo para adicionar esse abaixo
-
 from django.shortcuts import render, redirect
 from .models import Produto
 
@@ -11,12 +6,22 @@ def inicio(request):
     if request.method == 'POST':
 
         produto_id = request.POST.get('produto_id')
+        acao = request.POST.get('acao')
 
         produto = Produto.objects.get(id=produto_id)
 
-        if produto.quantidade > 0:
-            produto.quantidade -= 1
-            produto.save()
+        # DIMINUI ESTOQUE
+        if acao == 'vender':
+
+            if produto.quantidade > 0:
+                produto.quantidade -= 1
+
+        # AUMENTA ESTOQUE
+        elif acao == 'adicionar':
+
+            produto.quantidade += 1
+
+        produto.save()
 
         return redirect('/')
 

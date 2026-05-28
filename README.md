@@ -27,4 +27,5 @@ Para criar login e senha de adm, digitar no terminal:     python manage.py creat
 na parte do email, dê um enter para ignorar!
 
 meu login: gabriel / senha: Faculdade
+outro login: Karla / senha: Faculdade
 #-----------------------------------------------
